@@ -7,8 +7,8 @@ using System.Web;
 
 namespace Tazkarty.Models
 {
-    [Table("Movie_Actor")]
-    public class Movie_Actor
+    [Table("Actor_Movie")]
+    public class Actor_Movie
     {
         [Key, Column(Order = 0)]
         [ForeignKey("Movie")]
@@ -20,7 +20,6 @@ namespace Tazkarty.Models
         [ForeignKey("Actor")]
         public int ActorId { get; set; }
         public Actor Actor { get; set; }
-        ApplicationDbContext context = new ApplicationDbContext();
-    
+   
     }
 }

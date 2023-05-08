@@ -11,6 +11,8 @@ namespace Tazkarty.Data
         Action,
         Comidy,
         Drama,
-        Documentary
+        Documentary,
+        Horror,
+        Cartoon
     }
 }

@@ -30,8 +30,8 @@ namespace Tazkarty.Models
         public virtual DbSet<Actor> Actors { get; set; }
         public virtual DbSet<Cinema> Cinemas { get; set; }
         public virtual DbSet<Producer> Producers { get; set; }
-        // public virtual DbSet<Movie> Movies { get; set; }               // will add by relation
-        // public virtual DbSet<Movie_Actor> Movie_Actors { get; set; }   // will add by relation
+        public virtual DbSet<Movie> Movies { get; set; }               // will add by relation
+        public virtual DbSet<Actor_Movie> Actor_Movies { get; set; }   // will add by relation
 
 
 

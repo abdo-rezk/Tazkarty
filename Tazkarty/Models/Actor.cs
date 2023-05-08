@@ -20,7 +20,7 @@ namespace Tazkarty.Models
         public string Bio { get; set; }
 
         //relation with movie
-        public virtual ICollection<Movie_Actor>Movie_Actors { get; set; }
+        public virtual ICollection<Actor_Movie> Actor_Movies { get; set; }
 
     }
 }
