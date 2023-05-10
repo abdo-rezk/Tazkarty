@@ -13,10 +13,14 @@ namespace Tazkarty.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
+        [Display(Name = "Profile Picture")]
         public string ProfilePictureURL { get; set; }
-       // [Required,MaxLength(100)]
+
+        // [Required,MaxLength(100)]
+        [Display(Name = "Full Name")]
         public string FullName { get; set; }
 
+        [Display(Name = "Bio")]
         public string Bio { get; set; }
 
         //relation with movie
