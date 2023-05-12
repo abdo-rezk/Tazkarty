@@ -1,6 +1,8 @@
-﻿using System;
+﻿using PagedList;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.SqlServer;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
@@ -13,10 +15,18 @@ namespace Tazkarty.Controllers
     {
         private ApplicationDbContext context = new ApplicationDbContext();
         // GET: Movies
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> Index(int?i)
         {
-            var Movies = await context.Actors.ToListAsync();
-            return View();
+            Session["ControlName"] = "Movies";
+            var Movies = await context.Movies.ToListAsync();
+            return View(Movies.ToPagedList(i ?? 1, 3)); // number of page , number of item
+        }
+        public async Task<ActionResult> Search(string search, int? i)
+        {
+            search = search.Trim();
+            ViewBag.SearchTerm = search;
+            var movies = await context.Movies.Where(x => SqlFunctions.PatIndex("%" + search + "%", x.Name) > 0 || search == null).ToListAsync();
+            return View("index", movies.ToPagedList(i ?? 1, 3));
         }
     }
 }

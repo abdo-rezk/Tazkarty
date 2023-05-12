@@ -25,8 +25,6 @@ namespace Tazkarty.Controllers
         }
         public async Task<ActionResult> Search(string search, int? i)
         {
-            //            @*@string  = ViewContext.RouteData.Values["controller"].ToString(); *@ 
-
             search = search.Trim();
             ViewBag.SearchTerm=search;
             var Actors = await context.Actors.Where(x => SqlFunctions.PatIndex("%"+ search + "%",x.FullName)>0|| search == null).ToListAsync();

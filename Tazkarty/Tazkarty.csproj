@@ -304,11 +304,11 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Actor\Index.cshtml" />
     <Content Include="Views\Producer\Index.cshtml" />
+    <Content Include="Views\Cinema\Index.cshtml" />
+    <Content Include="Views\Movies\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Cinema\" />
-    <Folder Include="Views\Movies\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
